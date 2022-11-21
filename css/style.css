@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+:root{
+    --container-backgroundcolor: #FFFFFF;
+    --cta-background: #F6F5FF;
+    --cta-border: transparent;
+    --reset-backgroundcolor: transparent;
+    --bd-backgroundColor: #E5E5E5;
+    --os-font: 'Oswald', sans-serif;
+    
+}
+
+.dark{
+    --container-backgroundcolor: #000000;
+    --cta-background: transparent;
+    --cta-border: #4845ED;
+    --reset-backgroundcolor: #FFFFFF;
+    --bd-backgroundColor: #E5E5E5;
+    --os-font: 'Oswald', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,p,.reset,.add,.remove,#button-container{
+    margin: 10px 0;
+}
+
+body{
+    background-color: var(--bd-backgroundColor);
+}
+
+
+.theme-container{
+    background-color:  #0D0D0D;
+    width: 15%;
+    border-radius: 25px;
+    margin: 3% 0;
+    margin-right: 2%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-container::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color:  #4845ED;
+    left: 12px;
+    top: 50%;
+    opacity: 0.5;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.theme-container.active::before{
+    left: calc(100% - 40px)
+}
+
+i{
+    font-size: 1.5rem;
+    color:  #4B5563;
+    cursor: pointer;
+}
+
+
+
+.container{
+    width: 50%;
+    background-color: var(--container-backgroundcolor);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+}
+
+
+h1{
+    text-align: center;
+    color: #4845ED;
+    font-family: var(--os-font);
+    font-weight: bolder;
+    font-size: 2.5rem;
+    user-select: none;
+}
+
+p{
+    text-align: center;
+    color: #6B7280;
+    font-weight: bolder;
+    font-size: 5rem;
+    font-family: var(--os-font);
+}
+
+.reset{
+    --raleway: 'Raleway', sans-serif;
+    font-family: var(--raleway);
+    text-align: center;
+    padding: 7px 5%;
+    background-color: var(--reset-backgroundcolor);
+    border: 1px solid #4845ED;
+    border-radius: 5px;
+    color: #4845ED;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+#button-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+#button-container button{
+    width: 20%;
+    height: 42px;
+    font-family: var(--os-font);
+    background-color: var(--cta-background);
+    border: 1px solid var(--cta-border);
+    font-weight: bolder;
+    color: #4845ED;
+    font-size: 1rem; 
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
+/* medium screen view */
+@media only screen and (max-width: 1020px) {
+    
+    .container{
+        width: 80%;
+    }
+
+    .theme-container{
+        width: 80px;
+        border-radius: 35px;
+        padding: 7px 0;
+
+    }
+    
+    .theme-container::before{
+        left: 8px;
+
+    }
+    
+    .theme-container.active::before{
+        left: calc(100% - 35px)
+    } 
+}
+
+/* mobile screen view */
+@media only screen and (max-width: 600px) {
+
+    h1,p,.reset,.add,.remove,#button-container{
+        margin: 15px 0;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    p{
+        font-size: 3rem;
+        font-weight: 900;
+    }
+
+    #button-container button{
+        width: 6em;
+        font-size: 0.8rem;
+        height: 35px;
+        font-weight: 900;
+    }
+
+    .theme-container{
+        width: 70px;
+        padding: 7px 0;
+    }
+
+    .theme-container::before{
+        width: 25px;
+        height: 25px;
+        border-radius: 15px;
+        left: 6px;
+        top: 50%;
+    }
+
+    .theme-container.active::before{
+        left: calc(100% - 29px)
+    } 
+
+    i{
+        font-size: 1.2rem;
+        color:  #4B5563;
+        cursor: pointer;
+    }
+
+
+
+
+}
